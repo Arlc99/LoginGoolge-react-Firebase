@@ -16,6 +16,11 @@ app.use(cors({
   credentials: true, // Si necesitas enviar cookies o autenticación
 }));
 
+app.use(cors({
+  origin: 'https://stellar-hamster-62c2ef.netlify.app/', // Origen de tu aplicación React
+  credentials: true, // Si necesitas enviar cookies o autenticación
+}));
+
 //funcion para crea usuario con login google
 app.post('/auth/google', async (req, res) => {
   const { token } = req.body;
