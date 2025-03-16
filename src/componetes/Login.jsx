@@ -1,13 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { auth } from "../fireBase";
+import { auth,db } from "../fireBase";
 import "./Login.css";
 import iniciar from "../assets/iniciar.png";
 import logo from "../assets/logo.png";
-
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -21,12 +22,12 @@ function Login() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       setUser(user);
-      
+
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
-        role: "empleado" // Asignar el rol de "empleado"
-    });
-
+        role: "empleado", // Asignar el rol de "empleado"
+      });
+      window.alert("inicio de sesion con exito");
     } catch (error) {
       console.error("Error al iniciar sesión con Google:", error);
       setError("Error al iniciar sesión. Por favor, inténtalo de nuevo.");
@@ -35,24 +36,27 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!email || !contraseña){
-      setError('ningun campo debe estar vacio');
+    if (!email || !contraseña) {
+      setError("ningun campo debe estar vacio");
       return;
     }
-    try{
-      const userCredential = await signInWithEmailAndPassword(auth, email, contraseña);
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        contraseña
+      );
       const user = userCredential.user;
-        console.log("Usuario autenticado:", user);
-    }catch(error){
+      console.log("Usuario autenticado:", user);
+    } catch (error) {
       console.error("Error al iniciar sesión:", error);
-        setError("correo o contraseña incorrecta");
+      setError("correo o contraseña incorrecta");
     }
   };
 
-
   return (
     <div>
-      <GoogleOAuthProvider clientId="832804160977-luoirii7nnr9hpa5c6nro7j3dh5piivl.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="908711477449-pbba0tphu28309ji6mtn5o8ed597uaou.apps.googleusercontent.com">
         <div className="login">
           <form onSubmit={handleSubmit}>
             <div className="logo">
@@ -92,11 +96,7 @@ function Login() {
               </button>
             </div>
             <div className="google-signin">
-              <GoogleLogin
-                onSuccess={handleGoogleLogin}
-                
-                useOneTap
-              />
+              <GoogleLogin onSuccess={handleGoogleLogin} useOneTap />
             </div>
           </form>
         </div>
