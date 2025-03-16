@@ -40,8 +40,9 @@ form{
     font-family: sans-serif; 
     position: relative;
     top:20px;
-    left: -150px;
+    left: -120px;
     background-color: #324e66;
+    font-size: 15px;
 
 
 }
