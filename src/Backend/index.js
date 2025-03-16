@@ -10,15 +10,9 @@ app.use(express.json());
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);// para hacer login con google
 
-// Configura CORS para permitir solicitudes desde http://localhost:5173
 app.use(cors({
-  origin: 'http://localhost:5173', // Origen de tu aplicación React
-  credentials: true, // Si necesitas enviar cookies o autenticación
-}));
-
-app.use(cors({
-  origin: 'https://stellar-hamster-62c2ef.netlify.app/', // Origen de tu aplicación React
-  credentials: true, // Si necesitas enviar cookies o autenticación
+  origin: ['http://localhost:5173', 'https://stellar-hamster-62c2ef.netlify.app'],
+  credentials: true,
 }));
 
 //funcion para crea usuario con login google
@@ -70,6 +64,7 @@ app.post('/auth/google', async (req, res) => {
             if (err) {
               console.error('Error al obtener el rol:', err);
               return res.status(500).json({ success: false, message: 'Error en el servidor' });
+              console.log("es aqui"); 
             }
             const userWithRol = results[0];
             return res.json({ success: true, message: 'Login exitoso', user: userWithRol });
