@@ -84,7 +84,10 @@ function Login() {
     <div>
       <div className="login">
         <form onSubmit={handleSubmit}>
-          <h1>LOG IN</h1>
+          
+            <h1>LOG IN</h1>
+          
+          
 
           <div className="input_1">
             <img src={usuario} alt="fotoUsuario" />
@@ -117,7 +120,7 @@ function Login() {
             <div className="error">{error && <p>{error}</p>}</div>
             <div className="button">
               <button type="submit" disabled={loading}>
-               <h5>LOG IN</h5>
+               <h4>LOG IN</h4>
               </button>
             </div>
             <div className="google-signin">

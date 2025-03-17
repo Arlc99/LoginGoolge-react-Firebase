@@ -16,9 +16,10 @@ form{
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-   margin: 20px;
-    
-    justify-content: flex-start;
+   margin: 30px;
+    text-align: center;
+    justify-content: center ;
+    align-items: center;
     
 }
 .input_1{
@@ -71,10 +72,10 @@ h1{
 }
 .terminos{
     display: flex;
-    margin-right: 150px;
+    
     color: #FFFFFF;
     font-family: sans-serif;
-    align-items: center;
+   
 }
 
 .terminos a:hover{
