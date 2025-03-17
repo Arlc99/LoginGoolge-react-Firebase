@@ -6,6 +6,7 @@ import { auth, db } from "../fireBase";
 import "./Login.css";
 import iniciar from "../assets/iniciar.png";
 import logo from "../assets/logo.png";
+import google from "../assets/cromo.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -105,7 +106,7 @@ function Login() {
           </div>
           <div className="google-signin">
             <button type="button" onClick={handleGoogleLogin}>
-              Iniciar sesión con Google
+             <img src={google}/> Iniciar sesión con Google
             </button>
           </div>
         </form>
