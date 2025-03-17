@@ -7,6 +7,8 @@ import "./Login.css";
 import iniciar from "../assets/iniciar.png";
 import logo from "../assets/logo.png";
 import google from "../assets/cromo.png";
+import usuario from "../assets/usuario.png";
+import contra from "../assets/candao.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -23,17 +25,23 @@ function Login() {
 
       if (user) {
         // Guarda la información del usuario en Firestore
-        await setDoc(doc(db, "users", user.uid), {
-          email: user.email,
-          role: "empleado", // Asignar el rol de "empleado"
-        }, { merge: true });
+        await setDoc(
+          doc(db, "users", user.uid),
+          {
+            email: user.email,
+            role: "empleado", // Asignar el rol de "empleado"
+          },
+          { merge: true }
+        );
       }
 
       window.alert("Inicio de sesión con éxito");
     } catch (error) {
       console.error("Error al iniciar sesión con Google:", error);
       if (error.code === "auth/popup-closed-by-user") {
-        setError("El popup de Google se cerró antes de completar la autenticación.");
+        setError(
+          "El popup de Google se cerró antes de completar la autenticación."
+        );
       } else {
         setError("Error al iniciar sesión. Por favor, inténtalo de nuevo.");
       }
@@ -48,14 +56,21 @@ function Login() {
     }
     setLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, contraseña);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        contraseña
+      );
       const user = userCredential.user;
       console.log("Usuario autenticado:", user);
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
       if (error.code === "auth/invalid-email") {
         setError("El correo electrónico no es válido.");
-      } else if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+      } else if (
+        error.code === "auth/user-not-found" ||
+        error.code === "auth/wrong-password"
+      ) {
         setError("Correo o contraseña incorrecta.");
       } else {
         setError("Error al iniciar sesión. Por favor, inténtalo de nuevo.");
@@ -69,45 +84,47 @@ function Login() {
     <div>
       <div className="login">
         <form onSubmit={handleSubmit}>
-          <div className="logo">
-            <img src={logo} width="400px" height="400px" alt="Logo" />
+          <h1>LOG IN</h1>
+
+          <div className="input_1">
+            <img src={usuario} alt="fotoUsuario" />
+            <input
+              type="email"
+              placeholder="camilo@email.com"
+              className="input-field"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-          <label className="input-label" htmlFor="mi-input">
-            Email
-          </label>
-          <input
-            type="email"
-            placeholder="camilo@email.com"
-            className="input-field"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label className="input-label" htmlFor="mi-input">
-            Contraseña
-          </label>
-          <input
-            type="password"
-            placeholder="******"
-            className="input-field"
-            value={contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
-          />
+          <div className="input_1">
+            <img src={contra} />
+            <input
+              type="password"
+              placeholder="******"
+              className="input-field"
+              value={contraseña}
+              onChange={(e) => setContraseña(e.target.value)}
+            />
+          </div>
+
           <div className="terminos">
             <input type="checkbox" required />
             <p>
               Aceptar <a>Terminos y condiciones</a>
             </p>
           </div>
-          <div className="error">{error && <p>{error}</p>}</div>
-          <div className="button">
-            <button type="submit" disabled={loading}>
-              <img src={iniciar} alt="Iniciar sesión" />
-            </button>
-          </div>
-          <div className="google-signin">
-            <button type="button" onClick={handleGoogleLogin}>
-             <img src={google}/> Iniciar sesión con Google
-            </button>
+          <div className="botones">
+            <div className="error">{error && <p>{error}</p>}</div>
+            <div className="button">
+              <button type="submit" disabled={loading}>
+               <h5>LOG IN</h5>
+              </button>
+            </div>
+            <div className="google-signin">
+              <button type="button" onClick={handleGoogleLogin}>
+                <img src={google} /> Iniciar sesión con Google
+              </button>
+            </div>
           </div>
         </form>
       </div>
