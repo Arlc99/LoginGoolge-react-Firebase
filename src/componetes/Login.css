@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 form{
@@ -15,7 +16,7 @@ form{
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-   
+   margin: 20px;
     
     justify-content: flex-start;
     
@@ -73,6 +74,7 @@ h1{
     margin-right: 150px;
     color: #FFFFFF;
     font-family: sans-serif;
+    align-items: center;
 }
 
 .terminos a:hover{
