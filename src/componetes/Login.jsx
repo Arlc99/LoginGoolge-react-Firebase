@@ -3,12 +3,17 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../fireBase";
+import { serverTimestamp } from "firebase/firestore";
+import { IconButton, Button } from "@mui/material";// importar componente boton de material.iu
+import Navbar from './Navbar';
 import "./Login.css";
-import iniciar from "../assets/iniciar.png";
-import logo from "../assets/logo.png";
-import google from "../assets/cromo.png";
-import usuario from "../assets/usuario.png";
-import contra from "../assets/candao.png";
+
+
+//icono de material.iu
+import EmailIcon from "@mui/icons-material/Email"; // Icono de email (opcional)
+import LockIcon from "@mui/icons-material/Lock";
+import GoogleIcon from "@mui/icons-material/Google";
+import LoginIcon from "@mui/icons-material/Login";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -29,13 +34,16 @@ function Login() {
           doc(db, "users", user.uid),
           {
             email: user.email,
-            role: "empleado", // Asignar el rol de "empleado"
+            role: "empleado",
+            nombre: user.displayName,
+            createdAt: serverTimestamp(),
           },
           { merge: true }
         );
       }
 
       window.alert("Inicio de sesión con éxito");
+      setError(""); // Limpia el error si la autenticación es exitosa
     } catch (error) {
       console.error("Error al iniciar sesión con Google:", error);
       if (error.code === "auth/popup-closed-by-user") {
@@ -82,15 +90,14 @@ function Login() {
 
   return (
     <div>
+      <Navbar />
       <div className="login">
-        <form onSubmit={handleSubmit}>
-          
-            <h1>LOG IN</h1>
-          
-          
+        
+        <form className="form" onSubmit={handleSubmit}>
+          <h1 className="titu">LOG IN</h1>
 
           <div className="input_1">
-            <img src={usuario} alt="fotoUsuario" />
+            <EmailIcon sx={{ color: "#FFFFFF", mr: 1 }} />
             <input
               type="email"
               placeholder="camilo@email.com"
@@ -100,7 +107,7 @@ function Login() {
             />
           </div>
           <div className="input_1">
-            <img src={contra} />
+            <LockIcon sx={{ color: "#FFFFFF", mr: 1 }} />
             <input
               type="password"
               placeholder="******"
@@ -116,17 +123,58 @@ function Login() {
               Aceptar <a>Terminos y condiciones</a>
             </p>
           </div>
+          <div className="Register">
+            <p>
+              ¿no tiene cuenta? <a href="/Register">registrarse</a>
+            </p>
+          </div>
           <div className="botones">
             <div className="error">{error && <p>{error}</p>}</div>
             <div className="button">
-              <button type="submit" disabled={loading}>
-               <h4>LOG IN</h4>
-              </button>
+             
+              <Button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={loading}
+                variant="outlined"
+                color="inherit"
+                startIcon={<LoginIcon sx = {{ color: "#FFFFFF"}}/>}
+                sx={{
+                  fontWeight: 500,
+                  width: "200px",
+                  fontSize: "10px",
+                  color: "#FFFFFF",
+                  fontFamily: "sans-serif",
+                  
+                  
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  },
+                }}
+              >
+                Iniciar Sesión
+              </Button>
             </div>
             <div className="google-signin">
-              <button type="button" onClick={handleGoogleLogin}>
-                <img src={google} /> Iniciar sesión con Google
-              </button>
+              <Button
+                onClick={handleGoogleLogin}
+                variant="outlined"
+                color="inherit"
+                startIcon={<GoogleIcon sx={{ color: "#FFFFFF" }} />}
+                sx={{
+                  fontWeight: 500,
+                  width: "200px",
+                  fontSize: "10px",
+                  color: "#FFFFFF",
+                  fontFamily: "sans-serif",
+                 
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  },
+                }}
+              >
+                Iniciar Sesión con Google
+              </Button>
             </div>
           </div>
         </form>

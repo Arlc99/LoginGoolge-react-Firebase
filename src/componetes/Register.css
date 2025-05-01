@@ -1,0 +1,47 @@
+.registro{
+    background-color: #1d2c38;
+    color: #FFFFFF; 
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+.formRegister{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo{
+    margin: 20px;
+    width: 700px;
+    
+}
+.registro div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+   
+}
+
+
+@media (max-width: 768px) {
+    .registro div {
+        flex-direction: column;
+        align-items: center;
+    }
+    .titulo {
+        width: 100%;
+    }
+    input{
+        width: 100%;
+        margin: 10px 0; 
+    }
+    .termi{
+        display: flex;
+        font-size: 10px;
+        width: 100%;
+    }
+}
