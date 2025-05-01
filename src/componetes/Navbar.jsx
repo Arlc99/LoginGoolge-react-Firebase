@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import logo from "../assets/logo.png"; // Asegúrate de tener la imagen en la ruta correcta
 import {
   AppBar,
   Toolbar,
@@ -36,8 +37,8 @@ const Navbar = () => {
   const theme = createTheme({
   palette: {
     secondary: {
-      main: '#4CAF50',
-      contrastText: '#ffffff' // Cambia el color "secondary" a verde
+      main: '#4CAF50',// Cambia el color "secondary o fondo" a verde 
+      contrastText: '#ffffff' //color del texto en el boton 
     },
   },
 });
@@ -74,7 +75,7 @@ const Navbar = () => {
               letterSpacing: "1px"
             }}
           >
-            <StoreIcon sx={{ color: "#FFFFFF", fontSize:"80px" }} />
+            <img src = {logo} alt="Logo" style={{ width: "80px", margin: "5px" }} />
           </Typography>
 
           {isMobile ? (
@@ -89,7 +90,8 @@ const Navbar = () => {
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
                   transform: "scale(1.1)"
                 },
-                transition: "all 0.3s ease"
+                transition: "all 0.3s ease",
+                
               }}
             >
               <MenuIcon fontSize="medium" />
@@ -138,6 +140,7 @@ const Navbar = () => {
                   "&:hover": {
                     backgroundColor: "rgba(255, 255, 255, 0.1)"
                   }
+                
                 }}
               >
                 Iniciar Sesión

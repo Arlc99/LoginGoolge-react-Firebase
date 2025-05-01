@@ -22,14 +22,18 @@
     align-items: center;
     
 }
+.form h1 {
+    color:#4CAF50;
+}
 .input_1{
     display: flex;
     align-items: center;
     background-color: #1d2c38;
     margin: 10px;
     padding: 0;
-    border-bottom: 3px solid #FFFFFF;
+    border-bottom: 3px solid #4CAF50;
 }
+
 .input_2{
     display: flex;
     align-items: center;
@@ -83,8 +87,9 @@
     padding: 10px;
     
 }
+
 .Register p a {
-    color: #FFFFFF;
+    color: #4CAF50;
     text-decoration: none;
     cursor: pointer;
     

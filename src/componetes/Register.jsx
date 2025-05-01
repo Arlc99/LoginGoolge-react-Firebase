@@ -106,7 +106,7 @@ function Register() {
       <div className="registro">
         <form className="formRegister" onSubmit={handleSumit}>
           <div className="titulo">
-            <h1>Registro De Usuario</h1>
+            <h1>REGISTRO</h1>
           </div>
           <div className="persona">
             <div className="input_1">
