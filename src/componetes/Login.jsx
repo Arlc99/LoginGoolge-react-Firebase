@@ -97,7 +97,7 @@ function Login() {
           <h1 className="titu">LOG IN</h1>
 
           <div className="input_1">
-            <EmailIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+            <EmailIcon sx={{ color: "#1E1E1E", mr: 1, background: "#E8EDE4" }} />
             <input
               type="email"
               placeholder="camilo@email.com"
@@ -107,7 +107,7 @@ function Login() {
             />
           </div>
           <div className="input_1">
-            <LockIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+            <LockIcon sx={{ color: "#1E1E1E", mr: 1 }} />
             <input
               type="password"
               placeholder="******"
@@ -138,18 +138,23 @@ function Login() {
                 disabled={loading}
                 variant="outlined"
                 color="inherit"
-                startIcon={<LoginIcon sx = {{ color: "#FFFFFF"}}/>}
+                startIcon={<LoginIcon sx = {{ color: "#FFFF"}}/>}
                 sx={{
                   fontWeight: 500,
                   width: "200px",
                   fontSize: "10px",
-                  color: "#FFFFFF",
+                  color: "#FFFF",
                   fontFamily: "sans-serif",
-                  
-                  
+                   backgroundColor: "#0b880f",
+                   borderColor: "#0b880f",
                   "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    backgroundColor: "rgba(4, 77, 6,)", // Verde 5% opacidad
+                    borderColor: "#0b880f",
                   },
+                  transition: "all 0.2s ease",
+                  padding: "0 8px", // Ajuste de padding para altura pequeña
+                  textTransform: "none", // Evita mayúsculas automáticas
+                  lineHeight: 1, // Altura de línea compacta
                   
                 }}
               >
@@ -161,17 +166,23 @@ function Login() {
                 onClick={handleGoogleLogin}
                 variant="outlined"
                 color="inherit"
-                startIcon={<GoogleIcon sx={{ color: "#FFFFFF" }} />}
+                startIcon={<GoogleIcon sx={{ color: "#FFFF" }} />}
                 sx={{
                   fontWeight: 500,
                   width: "200px",
                   fontSize: "10px",
-                  color: "#FFFFFF",
+                  color: "#FFFF",
                   fontFamily: "sans-serif",
-                 
+                   backgroundColor: "#0b880f",
+                 borderColor: "#0b880f",
                   "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    backgroundColor: "rgba(4, 77, 6,)", // Verde 5% opacidad
+                    borderColor: "#0b880f",
                   },
+                  transition: "all 0.2s ease",
+                  padding: "0 8px", // Ajuste de padding para altura pequeña
+                  textTransform: "none", // Evita mayúsculas automáticas
+                  lineHeight: 1, // Altura de línea compacta
                 }}
               >
                 Iniciar Sesión con Google

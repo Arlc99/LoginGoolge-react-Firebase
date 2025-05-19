@@ -1,6 +1,6 @@
 .registro{
-    background-color: #1d2c38;
-    color: #FFFFFF; 
+   background: linear-gradient(to left, rgba(232, 236, 230, 0.9), rgba(242, 245, 240, 0.9));
+    color: #1E1E1E; 
     font-family: sans-serif;
     display: flex;
     justify-content: center;
@@ -8,15 +8,19 @@
 }
 .formRegister{
     display: flex;
+    background: #E8EDE4 ;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .titulo{
     margin: 20px;
     width: 700px;
-    color: #4CAF50;
+    color: #0b880f;
     
 }
 .registro div {

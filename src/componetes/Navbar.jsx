@@ -37,7 +37,7 @@ const Navbar = () => {
   const theme = createTheme({
   palette: {
     secondary: {
-      main: '#4CAF50',// Cambia el color "secondary o fondo" a verde 
+      main: '#0b880f',// Cambia el color "secondary o fondo" a verde 
       contrastText: '#ffffff' //color del texto en el boton 
     },
   },
@@ -47,7 +47,7 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
-    { text: "Inicio", href: "#home", icon: <HomeIcon /> },
+    { text: "Inicio", href: "http://localhost:5173/", icon: <HomeIcon /> },
     { text: "Servicios", href: "#services", icon: <DesignServicesIcon /> },
     { text: "Acerca", href: "#portfolio", icon: <InfoIcon /> },
     { text: "Contacto", href: "#contact", icon: <ContactMailIcon /> },
@@ -59,8 +59,8 @@ const Navbar = () => {
       <AppBar 
         position="static" 
         sx={{ 
-          backgroundColor: "#1d2c38", 
-          color: "#FFFFFF",
+            backgroundColor: 'rgba(255, 255, 255, 0.01)', 
+          color: "#1E1E1E",
           boxShadow: "none",
           borderBottom: "1px solid rgba(255, 255, 255, 0.12)"
         }}

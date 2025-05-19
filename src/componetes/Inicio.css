@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(to left, rgba(232, 236, 230, 0.9), rgba(242, 245, 240, 0.9));
+}
+
+.container {
+   display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribución equilibrada */
+    padding: 40px 5%; /* Más padding lateral */
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    /* Fondo degradado sutil */
+   
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+     width: 100%;
+     margin-right: 20%;
+}
+
+/* Animación para cada hijo del logo */
+.logo > * {
+    opacity: 0;
+    transform: translateY(-30px); /* Inicia arriba */
+    animation: fadeInDown 0.8s ease forwards;
+}
+
+/* Retrasos para cada elemento (aparecen uno tras otro) */
+.logo > *:nth-child(1) { animation-delay: 0.2s; }
+.logo > *:nth-child(2) { animation-delay: 0.5s; }
+.logo > *:nth-child(3) { animation-delay: 0.8s; }
+
+/* Keyframes para la animación */
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.texto{
+    width: 100%;
+}
+
+
+.logo h1{
+     font-family: 'Montserrat', sans-serif;
+   font-size: 50px;
+   color: #0b880f;
+
+   
+}
+
+.logo p {
+      font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+      color: #1E1E1E;
+    max-width: 80%;
+    margin: 20px auto;
+    width: 100%;
+}
+.redes {
+    margin-top: 20px;
+}
+.modelo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+      background: linear-gradient(to left, #0b880f, rgba(150, 228, 102, 0.9));
+    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  
+    border-radius: 50%;
+    z-index: 1;
+    margin-right: 10%;
+    margin-top: 50px;
+    
+      /* Animación: Inicia fuera de pantalla (derecha) */
+    opacity: 0;
+    transform: translateX(100px); /* Empieza 100px a la derecha */
+    animation: slideInFromRight 0.8s ease-out forwards;
+    animation-delay: 1s; 
+   
+}
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Posición final (centro) */
+    }
+}
+.modelo img {
+    width: 700px;
+    height: 500px;
+    border-radius: 50%;
+    filter: 
+        drop-shadow(0 15px 25px rgba(255, 255, 255, 0.2))
+        brightness(1.05) 
+        contrast(1.1);
+    
+        
+    position: relative;
+    z-index: 2;
+    right: 100px;
+      
+    
+
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .logo, .modelo {
+        margin-right: 0;
+        width: 90%;
+    }
+    .modelo {
+        margin-top: 80px;
+        height: 300px;
+        width: 300px;
+
+       
+    }
+    .modelo img {
+        right: 0px;
+         width: 100%;
+    height: 400px;
+    top:50px
+    
+    
+    }
+}

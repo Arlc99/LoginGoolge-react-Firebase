@@ -3,7 +3,7 @@ import { db } from "../fireBase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { IconButton, Button } from "@mui/material";// importar componente boton de material.iu
+import { IconButton, Button } from "@mui/material"; // importar componente boton de material.iu
 import Navbar from "./Navbar";
 
 import "./Register.css";
@@ -89,7 +89,7 @@ function Register() {
     } catch (error) {
       console.log(error);
       setError("Error al resgistrar el usuario");
-    };
+    }
   };
 
   const limpiarFormulario = () => {
@@ -102,7 +102,7 @@ function Register() {
   };
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="registro">
         <form className="formRegister" onSubmit={handleSumit}>
           <div className="titulo">
@@ -110,7 +110,7 @@ function Register() {
           </div>
           <div className="persona">
             <div className="input_1">
-              <PersonIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+              <PersonIcon sx={{ color: "#1E1E1E", mr: 1 }} />
               <input
                 type="text"
                 id="nombre"
@@ -120,7 +120,7 @@ function Register() {
               />
             </div>
             <div className="input_1">
-              <BadgeIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+              <BadgeIcon sx={{ color: "#1E1E1E", mr: 1 }} />
               <input
                 type="text"
                 id="Cedula"
@@ -132,7 +132,7 @@ function Register() {
           </div>
 
           <div className="input_1">
-            <EmailIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+            <EmailIcon sx={{ color: "#1E1E1E", mr: 1 }} />
             <input
               type="email"
               id="Email"
@@ -144,7 +144,7 @@ function Register() {
           </div>
           <div className="contraseñas">
             <div className="input_1">
-              <LockIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+              <LockIcon sx={{ color: "#1E1E1E", mr: 1 }} />
               <input
                 type="password"
                 id="contraseña"
@@ -154,7 +154,7 @@ function Register() {
               />
             </div>
             <div className="input_1">
-              <LockIcon sx={{ color: "#FFFFFF", mr: 1 }} />
+              <LockIcon sx={{ color: "#1E1E1E", mr: 1 }} />
               <input
                 type="password"
                 id="contraseña1"
@@ -173,7 +173,6 @@ function Register() {
           <div className="boton">
             <Button
               type="submit"
-             
               variant="outlined"
               color="inherit"
               startIcon={<AppRegistrationIcon sx={{ color: "#FFFFFF" }} />}
@@ -183,10 +182,16 @@ function Register() {
                 fontSize: "10px",
                 color: "#FFFFFF",
                 fontFamily: "sans-serif",
-
+                 backgroundColor: "#0b880f",
+                borderColor: "#0b880f",
                 "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  backgroundColor: "rgba(4, 77, 6,)", // Verde 5% opacidad
+                  borderColor: "#0b880f",
                 },
+                transition: "all 0.2s ease",
+                padding: "0 8px", // Ajuste de padding para altura pequeña
+                textTransform: "none", // Evita mayúsculas automáticas
+                lineHeight: 1, // Altura de línea compacta
               }}
             >
               Iniciar Sesión
