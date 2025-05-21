@@ -76,10 +76,14 @@
 }
 .terminos{
     display: flex;
-    
+    align-items: center;
     color: #1E1E1E;
     font-family: sans-serif;
    
+}
+.terminos input{
+    margin: 5px;
+    
 }
 .Register{
     color: #1E1E1E;
@@ -148,4 +152,28 @@ button:hover {
     background-color: #023a04;
     
     
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .terminos {
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    color: #1E1E1E;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    
+   
+}
+
+.terminos input{
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+}
 }

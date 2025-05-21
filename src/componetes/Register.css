@@ -31,6 +31,14 @@
     margin: 20px;
    
 }
+.termi{
+    display: flex;
+    font-size: 15px;
+    width: 700px;
+}
+.termi input{
+    margin: 0 10px;
+}
 
 
 @media (max-width: 768px) {
