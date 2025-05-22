@@ -1,0 +1,37 @@
+.typewriter-container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  min-height: 60px;
+  position: relative;
+}
+
+.typing-line {
+  position: relative;
+  display: inline-block;
+}
+
+.cursor {
+  border-right: 2px solid;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: left;
+  animation: underline-expand 0.5s forwards;
+}
+
+@keyframes underline-expand {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

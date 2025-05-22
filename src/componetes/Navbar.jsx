@@ -44,7 +44,7 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
-    { text: "Inicio", href: "http://localhost:5173/", icon: <HomeIcon /> },
+    { text: "Inicio", href: "/", icon: <HomeIcon /> },
     { text: "Servicios", href: "#services", icon: <DesignServicesIcon /> },
     { text: "Acerca", href: "#portfolio", icon: <InfoIcon /> },
     { text: "Contacto", href: "#contact", icon: <ContactMailIcon /> },

@@ -115,7 +115,362 @@ body{
     
 
 }
+/* === FONDO FUTURISTA VISIBLE AL INSTANTE === */
+.services {
+  position: relative;
+  background: #030503; /* Fondo oscuro */
+  overflow: hidden;
+  color: #FFFF;
+  padding: 40px;
+  margin: 25px;;
+  font-family: sans-serif;
+}
 
+/* Olas verdes animadas (100% visible) */
+.services::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: linear-gradient(90deg, 
+    rgba(7, 75, 9, 0.8) 0%, 
+    rgba(53, 88, 30, 0.5) 50%, 
+    rgba(1, 37, 2, 0.8) 100%);
+  animation: waveMove 5s linear infinite;
+  z-index: 1;
+  filter: blur(5px);
+}
+
+/* Estrellas ascendentes (mínimo código, máximo efecto) */
+.services::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(219, 241, 205, 0.8) 1px, transparent 2px),
+    radial-gradient(circle at 70% 80%, rgba(134, 194, 137, 0.6) 1px, transparent 3px),
+    radial-gradient(circle at 40% 60%, rgba(166, 207, 141, 0.9) 1px, transparent 1px);
+  background-size: 100px 150px, 200px 200px, 150px 100px;
+  animation: starsMove 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes waveMove {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes starsMove {
+  to { background-position: 0 -500px; }
+}
+
+
+
+.serviTitulo {
+    background: linear-gradient(90deg, #e8f7e9, #bbf198, #38c93d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+ 
+}
+
+.serviTexto{
+    display: flex;
+}
+.texto-1{
+    font-size: 50px;
+   background: linear-gradient(90deg, 
+    #0b880f, 
+    #96e466, 
+    #0b880f, 
+    #96e466, 
+    #0b880f); /* Banda de colores repetida para el efecto */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: waveShine 4s linear infinite;
+  display: inline-block; /* Necesario para que funcione correctamente */
+  font-weight: bold;
+}
+@keyframes waveShine {
+  0% { 
+    background-position: 0% 50%;
+    transform: translateY(0);
+  }
+  25% { 
+    transform: translateY(-2px); /* Sube */
+  }
+  50% { 
+    background-position: 100% 50%; 
+    transform: translateY(0);
+  }
+  75% { 
+    transform: translateY(2px); /* Baja */
+  }
+  100% { 
+    background-position: 0% 50%; 
+    transform: translateY(0);
+  }
+}
+
+.texto-2 {
+    font-size: 20px;
+    color: #e8f7e9; /* Color principal de tu web */
+    max-width: 80%;
+    margin: 20px auto;
+    width: 100%;
+    font-weight: 500; /* Cambiado a medium para un estilo más sutil */
+    text-align: center;
+    text-shadow: 
+        0 0 4px rgba(11, 136, 15, 0.4), /* Sombra más sutil */
+        0 0 8px rgba(150, 228, 102, 0.3); /* Sombra más ligera */
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif; /* Consistente con tu diseño */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.texto-2:hover {
+    text-shadow: 
+        0 0 6px rgba(11, 136, 15, 0.6), /* Sombra más suave al hover */
+        0 0 12px rgba(150, 228, 102, 0.4);
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo más ligero */
+   
+}
+
+/* Versión con animación sutil (opcional) */
+.texto-2.animated {
+    animation: subtle-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-glow {
+    from {
+        text-shadow: 
+            0 0 4px rgba(11, 136, 15, 0.4),
+            0 0 8px rgba(150, 228, 102, 0.3);
+    }
+    to {
+        text-shadow: 
+            0 0 6px rgba(11, 136, 15, 0.5),
+            0 0 10px rgba(150, 228, 102, 0.4);
+    }
+}
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 8px 32px rgba(0, 20, 5, 0.24),
+        inset 0 2px 4px rgba(255, 255, 255, 0.05),
+        0 0 0 1px rgba(74, 255, 128, 0.03); /* Borde sutil interior */
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    color: #f0f0f0;
+    margin-top: 20px;
+}
+
+/* Efecto de borde luminoso al hover */
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 
+        0 12px 40px rgba(10, 255, 50, 0.18),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(100, 255, 150, 0.2);
+}
+
+/* Detalle de borde superior sutil */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(150, 255, 180, 0.4), 
+        transparent);
+}
+
+/* Partículas flotantes (coherencia con el fondo) */
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(100, 255, 150, 0.03) 0%, 
+        transparent 70%);
+    animation: particleRotate 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes particleRotate {
+    to { transform: rotate(360deg); }
+}
+
+.card-content{
+    display: flex;
+}
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 0 16px 0;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e8f7e9; /* Color de tu paleta */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif; /* Consistent with your design */
+}
+
+/* Efecto subrayado decorativo */
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0b880f, #96e466); /* Tus colores verdes */
+    border-radius: 3px;
+}
+
+/* Versión con icono (opcional) */
+.card-header.with-icon {
+    gap: 12px;
+}
+
+/* Efecto hover para interactividad */
+.card:hover .card-header {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(150, 228, 102, 0.3); /* Sutil glow al hacer hover */
+}
+
+.card:hover .card-header::after {
+    width: 80px;
+    background: linear-gradient(90deg, #96e466, #0b880f); /* Invertido al hover */
+    transition: all 0.3s ease;
+}
+.card-img{
+     border: 3px solid #0b880f;
+      border-radius: 5px;
+     padding: 5px;
+}
+
+
+.card-img img {
+    width: 500px;
+    height: 300px;
+    transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+    animation: slideIn 0.5s forwards; /* Aplica la animación */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0); /* Termina en su posición original */
+    }
+}
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    margin: 0;
+    color: rgba(232, 247, 233, 0.9); /* Usando tu color e8f7e9 con transparencia */
+    line-height: 1.7; /* Mejor respiración */
+    font-family: 'Montserrat', sans-serif; /* Consistente con tu diseño */
+    font-weight: 400;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+/* Efecto de letras más nítidas */
+.card-text p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 16px;
+    padding: 0 10px;
+}
+
+/* Destacar palabras clave */
+.card-text .highlight {
+    color: #96e466; /* Tu verde claro */
+    font-weight: 500;
+}
+
+/* Efecto hover sutil */
+.card:hover .card-text {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Decoración de puntos para listas (opcional) */
+.card-text ul {
+    list-style: none;
+    padding: 0;
+    width: 85%;
+}
+
+.card-text li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.card-text li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: #96e466;
+    border-radius: 50%;
+}
+
+.btns{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    text-align: end;
+    margin-top: 20px;
+}
+.btns button{
+    margin: 10px;
+}
+
+.canva{
+    position: "relative";
+    height: "200px";
+    width: "100%";
+    overflow: "hidden";
+}
 
 @media (max-width: 1024px) {
     .container {
