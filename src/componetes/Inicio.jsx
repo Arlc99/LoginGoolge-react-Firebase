@@ -122,6 +122,7 @@ const Inicio = () => {
         </div>
       </div>
       <div className="services">
+         <div class="services-overlay"></div> 
         <div class="waves"></div>
         <div class="stars"></div>
         <div class="star"></div>
