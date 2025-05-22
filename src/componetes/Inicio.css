@@ -122,7 +122,7 @@ body{
   overflow: hidden;
   color: #FFFF;
   padding: 40px;
-  margin: 25px;;
+  margin: 25px;
   font-family: sans-serif;
 }
 
@@ -496,6 +496,9 @@ body{
     
     
     }
+    .services{
+        margin: 0;
+    }
 
     .serviTitulo {
         font-size: 25px;
@@ -602,6 +605,7 @@ body{
 }
 
 @media (max-width: 480px) {
+    
   .card {
     padding: 15px 10px;
     margin: 10px 0;
