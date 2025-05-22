@@ -496,4 +496,127 @@ body{
     
     
     }
+
+    .serviTitulo {
+        font-size: 25px;
+    }
+
+    .serviTexto{
+            flex-direction: column;
+    }
+    .texto-1{
+        font-size: 25px;
+    }
+
+    .texto-2{
+        font-size: 5px;
+    }
+   .card {
+    padding: 20px 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+  }
+
+  .card-content {
+    flex-direction: column;
+  }
+
+  .card-header {
+    font-size: 1.2rem;
+    padding: 15px 0;
+    margin-bottom: 12px;
+  }
+
+  .card-header::after {
+    height: 2px;
+    bottom: 5px;
+  }
+
+  .card-img {
+    margin-bottom: 15px;
+    border-width: 2px;
+    padding: 3px;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    animation: none; /* Desactivamos animación en móvil para mejor performance */
+    transform: none;
+  }
+
+  .card-text {
+    padding: 0 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card-text ul {
+    width: 100%;
+  }
+
+  .card-text li {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  .card-text li::before {
+    width: 6px;
+    height: 6px;
+    top: 8px;
+  }
+
+  .btns {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .btns button {
+    width: 45%;
+    min-width: 120px;
+    margin: 5px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  /* Optimizamos efectos hover para móvil */
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .card-header::after {
+    width: 60px; /* Mantenemos el ancho original */
+  }
+
+  /* Ajustamos partículas para móvil */
+  .card::after {
+    animation: particleRotate 25s linear infinite; /* Más lento para performance */
+  }
+
+   
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 15px 10px;
+    margin: 10px 0;
+  }
+
+  .card-header {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btns button {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
