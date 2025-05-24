@@ -119,29 +119,16 @@ body{
 .services {
   position: relative;
   background: #030503; /* Fondo oscuro */
-  overflow: hidden;
+  
   color: #FFFF;
   padding: 40px;
   margin: 25px;
   font-family: sans-serif;
+    z-index: 1;
+  
 }
 
-/* Olas verdes animadas (100% visible) */
-.services::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  height: 100px;
-  background: linear-gradient(90deg, 
-    rgba(7, 75, 9, 0.8) 0%, 
-    rgba(53, 88, 30, 0.5) 50%, 
-    rgba(1, 37, 2, 0.8) 100%);
-  animation: waveMove 5s linear infinite;
-  z-index: 1;
-  filter: blur(5px);
-}
+
 
 /* Estrellas ascendentes (mínimo código, máximo efecto) */
 .services::after {
@@ -281,6 +268,7 @@ body{
     z-index: 2;
     color: #f0f0f0;
     margin-top: 20px;
+   
 }
 
 /* Efecto de borde luminoso al hover */
@@ -471,6 +459,121 @@ body{
     width: "100%";
     overflow: "hidden";
 }
+.acerca{
+  display: flex;
+  margin-top: 100px;
+}
+.texto{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.texto div{
+  margin-top: 20px;
+}
+
+/* Efectos para el logo */
+.logo-hover {
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 5px rgba(11, 255, 15, 0.7));
+}
+
+.logo-hover:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(11, 255, 15, 0.9));
+}
+
+/* Títulos VIP con efecto matrix */
+.vip-title {
+  font-size: 4.5rem;
+  background: linear-gradient(135deg, #0bff0f, #7eff7a, #0b880f, #00ff40);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(11, 255, 15, 0.5);
+  animation: textGlow 2s ease-in-out infinite alternate;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1;
+}
+
+@keyframes textGlow {
+  0% { opacity: 0.9; text-shadow: 0 0 10px rgba(11, 255, 15, 0.5); }
+  100% { opacity: 1; text-shadow: 0 0 25px rgba(11, 255, 15, 0.8), 0 0 35px rgba(11, 136, 15, 0.4); }
+}
+
+/* Subtítulos con efecto haz de luz */
+.subtitle-beam {
+  position: relative;
+  color: #e0ffe1;
+  padding-left: 15px;
+}
+
+.subtitle-beam::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #0bff0f, transparent);
+  border-radius: 2px;
+}
+
+/* Pastillas tecnológicas */
+.tech-pill {
+  display: inline-block;
+  background: rgba(11, 136, 15, 0.2);
+  border: 1px solid #0bff0f;
+  border-radius: 20px;
+  padding: 2px 12px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+  background: rgba(11, 255, 15, 0.3);
+  box-shadow: 0 0 10px rgba(11, 255, 15, 0.5);
+}
+
+/* Texto destacado */
+.highlight-pulse {
+  animation: pulseHighlight 1.5s infinite;
+}
+
+@keyframes pulseHighlight {
+  0% { color: #96e466; }
+  50% { color: #0bff0f; text-shadow: 0 0 10px rgba(11, 255, 15, 0.7); }
+  100% { color: #96e466; }
+}
+
+/* Subrayado animado */
+.text-underline {
+  position: relative;
+}
+
+.text-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0bff0f, transparent);
+  animation: underlineFlow 3s linear infinite;
+}
+
+@keyframes underlineFlow {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Texto con brillo general */
+.glow-text {
+  text-shadow: 0 0 8px rgba(150, 228, 102, 0.3);
+}
+
 
 @media (max-width: 1024px) {
     .container {

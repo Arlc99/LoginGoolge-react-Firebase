@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import { Canvas } from '@react-three/fiber';
+import { Canvas } from "@react-three/fiber";
 //iamgenes locales
-import modelo from "../assets/modelo.png"; 
-import landing from "../assets/Landing.jpg"; 
-import aplicativo from "../assets/aplicativo.jpg"
+import modelo from "../assets/modelo.png";
+import landing from "../assets/Landing.jpg";
+import aplicativo from "../assets/aplicativo.jpg";
 //archivo css
 import "./Inicio.css";
-
 
 //material ui
 import { Box, Button } from "@mui/material";
@@ -122,16 +121,15 @@ const Inicio = () => {
         </div>
       </div>
       <div className="services">
-         <div class="services-overlay"></div> 
-        <div class="waves"></div>
-        <div class="stars"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="stars"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div className="waves"></div>
+        <div className="stars"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div clasName="star"></div>
+        <div className="stars"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
 
         <div className="serviTitulo">
           <p>servicios</p>
@@ -238,7 +236,7 @@ const Inicio = () => {
             </Button>
           </div>
         </div>
-        <div className="canva" >
+        <div className="canva">
           <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
             <TunnelPanel />
             <ambientLight intensity={0.5} />
@@ -256,20 +254,24 @@ const Inicio = () => {
             </div>
             <div className="card-text">
               <p>
-                Diseños <span class="highlight">100% personalizados </span> que combinan arquitectura técnica robusta 
-                con UX conversivo. Cada línea de
-                 código está optimizada para maximizar engagement y simplificar procesos complejos.
+                Diseños <span class="highlight">100% personalizados </span> que
+                combinan arquitectura técnica robusta con UX conversivo. Cada
+                línea de código está optimizada para maximizar engagement y
+                simplificar procesos complejos.
               </p>
 
               <ul>
                 <li>
-                 Fullstack a medida - Desarrollo desde backend hasta interfaz, perfectamente integrado
+                  Fullstack a medida - Desarrollo desde backend hasta interfaz,
+                  perfectamente integrado
                 </li>
                 <li>
-                   Tecnología responsive - Adaptación perfecta a móvil, tablet y desktop
+                  Tecnología responsive - Adaptación perfecta a móvil, tablet y
+                  desktop
                 </li>
                 <li>
-                  Integraciones nativas - Conectamos con tus CRM, APIs y herramientas existentes
+                  Integraciones nativas - Conectamos con tus CRM, APIs y
+                  herramientas existentes
                 </li>
               </ul>
             </div>
@@ -326,6 +328,40 @@ const Inicio = () => {
             >
               Comprar ahora
             </Button>
+          </div>
+        </div>
+        <div className="acerca">
+          <div className="img-acer">
+            <img src={logo} alt="logo" className="logo-hover" />
+          </div>
+          <div className="texto">
+            <div className="texto-1">
+              <h2 className="">VIP</h2>
+              <h2 className="">DEVELOPMENT</h2>
+            </div>
+
+            <div className="texto-s">
+              <h4 className="subtitle-beam">
+                Especialistas en transformación digital integral
+              </h4>
+              <h4 className="subtitle-beam">
+                <span className="tech-pill">Desarrollo web a medida</span> |
+                <span className="tech-pill"> Frontend & Backend</span> |
+                <span className="tech-pill"> Diseño estratégico</span>
+              </h4>
+            </div>
+
+            <div className="texto-p">
+              <p className="glow-text">
+                Impulsamos pymes y startups hacia la{" "}
+                <strong className="highlight-pulse">excelencia digital</strong>,
+              </p>
+              <p className="glow-text">
+                construyendo su{" "}
+                <span className="text-underline">autoridad online</span> con
+                tecnología premium
+              </p>
+            </div>
           </div>
         </div>
       </div>
