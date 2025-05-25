@@ -4,8 +4,11 @@ import logo from "../assets/logo.png";
 import { Canvas } from "@react-three/fiber";
 //iamgenes locales
 import modelo from "../assets/modelo.png";
-import landing from "../assets/Landing.jpg";
-import aplicativo from "../assets/aplicativo.jpg";
+import landing from "../assets/Landing.jpeg";
+import aplicativo from "../assets/aplicativo.jpeg";
+import crm from "../assets/CRM.jpeg";
+import inventario from "../assets/cc.jpg";
+import finanzas from "../assets/finanzas.jpeg"
 //archivo css
 import "./Inicio.css";
 
@@ -26,11 +29,11 @@ import { TunnelPanel } from "./TunnelPanel";
 const Inicio = () => {
   // Definición de las líneas para el efecto de escritura
   const lines = [
-    "Transformamos tus ideas en experiencias digitales que cautivan y convierten",
-    "Diseño web moderno y atractivo",
+    "Transformamos tus procesos en sistemas integrados que optimizan y automatizan tu negocio",
+    "La sinergia perfecta entre ERP y CRM para una empresa conectada",
     "Elegancia, funcionalidad y tecnolgia a la vanguardia",
-    "Desarrollo web a la medida para tu negocio",
-    "Interactiva y responsiva, con una interfaz de usuario amigable",
+    "Soluciones integrales que unifican operaciones, ventas y atención al cliente",
+    "¿Listo para llevar la gestión de tu empresa al siguiente nivel?",
     "¿Listo para impresionar a tus clientes desde el primer clic?",
   ];
 
@@ -39,10 +42,10 @@ const Inicio = () => {
       <div className="container">
         <div className="logo">
           <div className="texto">
-            <h1>DevWeb/UX</h1>
+            <h1>ERP+CRM Integrado</h1>
             <p>
-              Desarrolla la web de tu negocio y llevalo a otro nivel de calidad
-              y competencia
+              Transforma la gestión de tu negocio: automatiza procesos,
+              centraliza información y toma decisiones basadas en datos.
             </p>
             <div className="boton">
               <Button
@@ -136,8 +139,8 @@ const Inicio = () => {
         </div>
         <div className="serviTexto">
           <div className="texto-1">
-            <h2>Desarrollo web</h2>
-            <h2>Perzonalizado</h2>
+            <h2>ERP+CRM</h2>
+            <h2> AUTOMATIZA TU EMPRESA</h2>
           </div>
           <div className="texto-2">
             <TypewriterEffect
@@ -151,33 +154,34 @@ const Inicio = () => {
         <div className="card">
           <div className="card-header">
             <h2>
-              Landing Pages a Medida: Elegancia, Funcionalidad y Resultados
+              Facturación Electrónica Integrada: Exacta, Segura y Automatizada
             </h2>
           </div>
           <div className="card-content">
             <div className="card-img">
-              <img src={landing} alt="Landing" />
+              <img src={crm} alt="Landing" />
             </div>
             <div className="card-text">
               <p>
-                Diseños <span class="highlight">100% personalizados </span> que
-                fusionan estética impactante con estrategias conversivas. Cada
-                detalle está pensado para captar atención, transmitir valor y
-                guiar a tu audiencia hacia la acción.
+                Soluciones{" "}
+                <span className="highlight">100% adaptadas a SAT </span> que
+                unen cumplimiento legal con eficiencia operativa. Cada proceso
+                está diseñado para evitar errores, reducir tiempos y optimizar
+                tu flujo financiero.
               </p>
 
               <ul>
                 <li>
-                  {" "}
-                  Desarrollo estratégico – Adaptado a tus objetivos (ventas,
-                  leads, engagement).
+                  <strong>Integración total</strong> – Conecta con tu ERP, CRM o
+                  sistema contable actual.
                 </li>
                 <li>
-                  branding: "Diseños que reflejan la esencia de tu marca y
-                  conectan emocionalmente."
+                  <strong>Cumplimiento garantizado</strong> – Certificaciones
+                  CFDI 4.0 y manejo de complementos (nómina, pagos).
                 </li>
                 <li>
-                  Mobile First – Experiencia impecable en cualquier dispositivo.
+                  <strong>Automatización inteligente</strong> – Timbre
+                  automático, alertas fiscales y repositorio digital organizado.
                 </li>
               </ul>
             </div>
@@ -209,10 +213,58 @@ const Inicio = () => {
             >
               LEARN MORE
             </Button>
+          </div>
+        </div>
+
+        <div className="canva">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <TunnelPanel />
+            <ambientLight intensity={0.5} />
+          </Canvas>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            <h2>
+              Landing Pages Profesionales en Horas <br />
+              <span className="subtitle">
+                Plantillas Premium 100% Personalizables
+              </span>
+            </h2>
+          </div>
+          <div className="card-content">
+            <div className="card-img">
+              <img src={aplicativo} alt="Landing" />
+            </div>
+            <div className="card-text">
+              <p>
+                Transforma plantillas en{" "}
+                <span className="highlight">páginas de alto rendimiento</span>
+                sin empezar desde cero. Ideal para campañas rápidas,
+                lanzamientos o promociones que no pueden esperar.
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Biblioteca de plantillas</strong> – Diseños modernos
+                  para todos los sectores
+                </li>
+                <li>
+                  <strong>Editor intuitivo</strong> – Cambia textos, colores y
+                  fotos en minutos (sin técnicos)
+                </li>
+                <li>
+                  <strong>Responsive garantizado</strong> – Perfecto en móviles,
+                  tablets y desktop
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="btns">
             <Button
               variant="outlined"
               color="inherit"
-              startIcon={<ShoppingCartIcon />}
+              startIcon={<StarIcon />}
               sx={{
                 fontWeight: 100,
                 width: "200px",
@@ -232,7 +284,7 @@ const Inicio = () => {
                 lineHeight: 1, // Altura de línea compacta
               }}
             >
-              Comprar ahora
+              LEARN MORE
             </Button>
           </div>
         </div>
@@ -245,33 +297,35 @@ const Inicio = () => {
         <div className="card">
           <div className="card-header">
             <h2>
-              Aplicativos Web a Medida: Potencia, Rendimiento y Conversión
+              Sistema ERP/CRM Todo-en-Uno <br />
+              <span className="subtitle">
+                Automatiza ventas, operaciones y atención al cliente
+              </span>
             </h2>
           </div>
           <div className="card-content">
             <div className="card-img">
-              <img src={aplicativo} alt="Landing" />
+              <img src={landing} alt="Crm" />
             </div>
             <div className="card-text">
               <p>
-                Diseños <span class="highlight">100% personalizados </span> que
-                combinan arquitectura técnica robusta con UX conversivo. Cada
-                línea de código está optimizada para maximizar engagement y
-                simplificar procesos complejos.
+                <span className="highlight">Unifica tu negocio</span> en una
+                plataforma inteligente que sincroniza equipos, datos y procesos.
+                Deja atrás los sistemas fragmentados.
               </p>
 
               <ul>
                 <li>
-                  Fullstack a medida - Desarrollo desde backend hasta interfaz,
-                  perfectamente integrado
+                  <strong>CRM avanzado</strong> – Funnel de ventas, seguimiento
+                  360° y automatización de leads
                 </li>
                 <li>
-                  Tecnología responsive - Adaptación perfecta a móvil, tablet y
-                  desktop
+                  <strong>ERP modular</strong> – Inventario, compras, producción
+                  y finanzas en tiempo real
                 </li>
                 <li>
-                  Integraciones nativas - Conectamos con tus CRM, APIs y
-                  herramientas existentes
+                  <strong>Multiplataforma</strong> – Acceso desde oficina, campo
+                  o móvil con datos siempre sincronizados
                 </li>
               </ul>
             </div>
@@ -303,10 +357,53 @@ const Inicio = () => {
             >
               LEARN MORE
             </Button>
+          </div>
+        </div>
+        <div className="canva">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <TunnelPanel />
+            <ambientLight intensity={0.5} />
+          </Canvas>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            <h2> Gestión Maestra de Inventario</h2>
+          </div>
+          <div className="card-content">
+            <div className="card-img">
+              <img src={inventario} alt="inventario" />
+            </div>
+            <div className="card-text">
+              <p>
+                <span className="highlight">
+                  Sistema centralizado de productos{" "}
+                </span>{" "}
+                para mantener tu inventario siempre actualizado y organizado
+                bajo tus propias reglas.
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Inventario en tiempo real</strong> - Con alertas de
+                  reposición y caducidad
+                </li>
+                <li>
+                  <strong>Categorización avanzada</strong> - Estructura
+                  jerárquica personalizable (familias, subfamilias, atributos)
+                </li>
+                <li>
+                  <strong>Reportes de inventario</strong> - Valorización,
+                  rotación de stock y análisis ABC
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="btns">
             <Button
               variant="outlined"
               color="inherit"
-              startIcon={<ShoppingCartIcon />}
+              startIcon={<StarIcon />}
               sx={{
                 fontWeight: 100,
                 width: "200px",
@@ -326,10 +423,84 @@ const Inicio = () => {
                 lineHeight: 1, // Altura de línea compacta
               }}
             >
-              Comprar ahora
+              LEARN MORE
             </Button>
           </div>
         </div>
+        <div className="canva">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <TunnelPanel />
+            <ambientLight intensity={0.5} />
+          </Canvas>
+        </div>
+
+        <div className="card">
+          <div className="card-header">
+            <h2> Módulo de Finanzas Integral</h2>
+          </div>
+          <div className="card-content">
+            <div className="card-img">
+              <img src={finanzas} alt="inventario" />
+            </div>
+            <div className="card-text">
+              <p>
+                <span className="highlight">
+                  El centro nervioso de tu negocio:
+                </span> Convierte datos financieros en decisiones estratégicas con
+                
+                herramientas profesionales para gestión fiscal y análisis de
+                rentabilidad.
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Nóminas 100% compatibles con el SAT</strong> - Cálculo automático de ISR, IMSS, préstamos y percepciones
+                </li>
+                <li>
+                  <strong>Ventas consolidadas</strong> - Comparativo histórico por periodo con filtros personalizados
+                </li>
+                <li>
+                       <strong>Análisis de ganancias</strong> - Margen bruto/neto por producto, línea o sucursal
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="btns">
+            <Button
+              variant="outlined"
+              color="inherit"
+              startIcon={<StarIcon />}
+              sx={{
+                fontWeight: 100,
+                width: "200px",
+                height: "40px", // Altura más pequeña
+                minHeight: "40px", // Evita que crezca
+                fontSize: "10px",
+                color: "#ffffff", // Texto blanco
+                backgroundColor: "#0b880f", // Hereda el color de fondo
+                borderColor: "#0b880f",
+                "&:hover": {
+                  backgroundColor: "rgba(4, 77, 6,)", // Verde 5% opacidad
+                  borderColor: "#0b880f",
+                },
+                transition: "all 0.2s ease",
+                padding: "0 8px", // Ajuste de padding para altura pequeña
+                textTransform: "none", // Evita mayúsculas automáticas
+                lineHeight: 1, // Altura de línea compacta
+              }}
+            >
+              LEARN MORE
+            </Button>
+          </div>
+        </div>
+         <div className="canva">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <TunnelPanel />
+            <ambientLight intensity={0.5} />
+          </Canvas>
+        </div>
+
         <div className="acerca">
           <div className="img-acer">
             <img src={logo} alt="logo" className="logo-hover" />
@@ -342,12 +513,12 @@ const Inicio = () => {
 
             <div className="texto-s">
               <h4 className="subtitle-beam">
-                Especialistas en transformación digital integral
+                  Sistemas ERP/CRM que <span className="text-underline">reducen costos</span> y <span className="text-underline">aumentan productividad</span>
               </h4>
               <h4 className="subtitle-beam">
-                <span className="tech-pill">Desarrollo web a medida</span> |
-                <span className="tech-pill"> Frontend & Backend</span> |
-                <span className="tech-pill"> Diseño estratégico</span>
+                <span className="tech-pill">+30% eficiencia operativa*</span> |
+                <span className="tech-pill"> Ventas + coordinadas</span> |
+                <span className="tech-pill">Decisiones con datos</span>
               </h4>
             </div>
 

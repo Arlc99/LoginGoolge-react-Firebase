@@ -370,7 +370,7 @@ body{
 
 
 .card-img img {
-    width: 500px;
+    width: 400px;
     height: 300px;
     transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
     animation: slideIn 0.5s forwards; /* Aplica la animación */
@@ -461,7 +461,7 @@ body{
 }
 .acerca{
   display: flex;
-  margin-top: 100px;
+ 
 }
 .texto{
   display: block;
@@ -484,24 +484,9 @@ body{
   filter: drop-shadow(0 0 15px rgba(11, 255, 15, 0.9));
 }
 
-/* Títulos VIP con efecto matrix */
-.vip-title {
-  font-size: 4.5rem;
-  background: linear-gradient(135deg, #0bff0f, #7eff7a, #0b880f, #00ff40);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 20px rgba(11, 255, 15, 0.5);
-  animation: textGlow 2s ease-in-out infinite alternate;
-  letter-spacing: 2px;
-  margin: 0;
-  line-height: 1;
-}
 
-@keyframes textGlow {
-  0% { opacity: 0.9; text-shadow: 0 0 10px rgba(11, 255, 15, 0.5); }
-  100% { opacity: 1; text-shadow: 0 0 25px rgba(11, 255, 15, 0.8), 0 0 35px rgba(11, 136, 15, 0.4); }
-}
+
+
 
 /* Subtítulos con efecto haz de luz */
 .subtitle-beam {
@@ -705,6 +690,51 @@ body{
     animation: particleRotate 25s linear infinite; /* Más lento para performance */
   }
 
+  .acerca {
+    flex-direction: column;
+   
+    align-items: center;
+  }
+
+  .texto {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .logo-hover {
+    max-width: 300px;
+  }
+
+  .subtitle-beam {
+    font-size: 0.95rem;
+    padding-left: 10px;
+  }
+
+  .tech-pill {
+    padding: 2px 8px;
+    margin: 0 3px 5px 3px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto-1 h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle-beam {
+    font-size: 0.85rem;
+  }
+
+  .texto-p p {
+    font-size: 0.85rem;
+  }
+
+  .tech-pill {
+    display: block;
+    margin: 5px auto;
+    width: fit-content;
+  }
    
 }
 
