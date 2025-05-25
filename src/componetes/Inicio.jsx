@@ -8,7 +8,8 @@ import landing from "../assets/Landing.jpeg";
 import aplicativo from "../assets/aplicativo.jpeg";
 import crm from "../assets/CRM.jpeg";
 import inventario from "../assets/cc.jpg";
-import finanzas from "../assets/finanzas.jpeg"
+import finanzas from "../assets/finanzas.jpeg";
+import roboto from "../assets/robot.png";
 //archivo css
 import "./Inicio.css";
 
@@ -20,6 +21,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import StarIcon from "@mui/icons-material/Star";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PhoneIcon from "@mui/icons-material/Phone";
+import SendIcon from "@mui/icons-material/Send";
 
 //componente para el efecto de escritura
 import TypewriterEffect from "./TypewriterEffect";
@@ -446,21 +450,24 @@ const Inicio = () => {
               <p>
                 <span className="highlight">
                   El centro nervioso de tu negocio:
-                </span> Convierte datos financieros en decisiones estratégicas con
-                
+                </span>{" "}
+                Convierte datos financieros en decisiones estratégicas con
                 herramientas profesionales para gestión fiscal y análisis de
                 rentabilidad.
               </p>
 
               <ul>
                 <li>
-                  <strong>Nóminas 100% compatibles con el SAT</strong> - Cálculo automático de ISR, IMSS, préstamos y percepciones
+                  <strong>Nóminas 100% compatibles con el SAT</strong> - Cálculo
+                  automático de ISR, IMSS, préstamos y percepciones
                 </li>
                 <li>
-                  <strong>Ventas consolidadas</strong> - Comparativo histórico por periodo con filtros personalizados
+                  <strong>Ventas consolidadas</strong> - Comparativo histórico
+                  por periodo con filtros personalizados
                 </li>
                 <li>
-                       <strong>Análisis de ganancias</strong> - Margen bruto/neto por producto, línea o sucursal
+                  <strong>Análisis de ganancias</strong> - Margen bruto/neto por
+                  producto, línea o sucursal
                 </li>
               </ul>
             </div>
@@ -494,7 +501,7 @@ const Inicio = () => {
             </Button>
           </div>
         </div>
-         <div className="canva">
+        <div className="canva">
           <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
             <TunnelPanel />
             <ambientLight intensity={0.5} />
@@ -513,7 +520,9 @@ const Inicio = () => {
 
             <div className="texto-s">
               <h4 className="subtitle-beam">
-                  Sistemas ERP/CRM que <span className="text-underline">reducen costos</span> y <span className="text-underline">aumentan productividad</span>
+                Sistemas ERP/CRM que{" "}
+                <span className="text-underline">reducen costos</span> y{" "}
+                <span className="text-underline">aumentan productividad</span>
               </h4>
               <h4 className="subtitle-beam">
                 <span className="tech-pill">+30% eficiencia operativa*</span> |
@@ -535,7 +544,152 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+        <div className="canva">
+          <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <TunnelPanel />
+            <ambientLight intensity={0.5} />
+          </Canvas>
+        </div>
+        <div className="contacto">
+          <div className="card">
+            <div className="content-contacto">
+              <h1>Contacto</h1>
+
+              <div className="corre">
+                <input
+                  type="email"
+                  className="input-field"
+                  placeholder="tu correo "
+                  required
+                />
+                <label className="input-label">Email</label>
+              </div>
+
+              <Button
+                variant="outlined"
+                color="inherit"
+                startIcon={<SendIcon />}
+                sx={{
+                  fontWeight: 100,
+                  width: "200px",
+                  height: "40px", // Altura más pequeña
+                  minHeight: "40px", // Evita que crezca
+                  fontSize: "15px",
+                  color: "#ffffff", // Texto blanco
+                  backgroundColor: "#0b880f", // Hereda el color de fondo
+                  borderColor: "#0b880f",
+                  "&:hover": {
+                    backgroundColor: "rgba(4, 77, 6,)", // Verde 5% opacidad
+                    borderColor: "#0b880f",
+                  },
+                  transition: "all 0.2s ease",
+                  padding: "0 8px", // Ajuste de padding para altura pequeña
+                  textTransform: "none", // Evita mayúsculas automáticas
+                  lineHeight: 1, // Altura de línea compacta
+                }}
+              >
+                Enviar
+              </Button>
+
+              <div className="contacto-info">
+                <div className="info-item">
+                  <MailOutlineIcon
+                    style={{ color: "#0b880f", marginRight: 8 }}
+                  />
+                  <p className="info-text">contacto@vipdev.com</p>
+                </div>
+                <div className="info-item">
+                  <PhoneIcon style={{ color: "#0b880f", marginRight: 8 }} />
+                  <p className="info-text"> +57 316-812-0218</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="robot-float">
+            <img src={roboto} alt="Asistente ERP" />
+          </div>
+        </div>
       </div>
+      <footer className="erp-footer">
+        {/* Sección superior */}
+        <div className="footer-top">
+          <div className="footer-brand">
+            <img
+              src={logo}
+              alt="VIP DEVELOPMENT"
+              className="footer-logo"
+            />
+            <p className="footer-slogan">
+              Transformando negocios con tecnología inteligente
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <div className="link-group">
+              <h4 className="link-title">Sistema</h4>
+              <a href="#" className="footer-link">
+                Módulos
+              </a>
+              <a href="#" className="footer-link">
+                Actualizaciones
+              </a>
+              <a href="#" className="footer-link">
+                API
+              </a>
+            </div>
+
+            <div className="link-group">
+              <h4 className="link-title">Recursos</h4>
+              <a href="#" className="footer-link">
+                Documentación
+              </a>
+              <a href="#" className="footer-link">
+                Tutoriales
+              </a>
+              <a href="#" className="footer-link">
+                Blog
+              </a>
+            </div>
+
+            <div className="link-group">
+              <h4 className="link-title">Legal</h4>
+              <a href="#" className="footer-link">
+                Términos
+              </a>
+              <a href="#" className="footer-link">
+                Privacidad
+              </a>
+              <a href="#" className="footer-link">
+                Soporte
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Divisor estilizado */}
+        <div className="footer-divider">
+          <div className="glow-line"></div>
+        </div>
+
+        {/* Sección inferior */}
+        <div className="footer-bottom">
+          <p className="copyright">
+            © 2025 VIP DEVELOPMENT. Todos los derechos reservados
+          </p>
+
+          <div className="social-links">
+            <a href="#" className="social-icon" aria-label="LinkedIn">
+              <InstagramIcon fontSize="medium" />
+            </a>
+            <a href="#" className="social-icon" aria-label="Twitter">
+              <WhatsAppIcon fontSize="medium" />
+            </a>
+            <a href="#" className="social-icon" aria-label="GitHub">
+               <GitHubIcon fontSize="medium" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
